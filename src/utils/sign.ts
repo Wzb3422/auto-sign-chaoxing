@@ -1,10 +1,11 @@
 import { Page, Browser } from 'puppeteer'
-
+import ConfigPage from './ConfigPage'
 
 export const signAll = async (browser: Browser, activeItem: ActiveItem[]) => {
 
   const signOne = async (activeItem: ActiveItem) => {
     const page = await browser.newPage()
+    ConfigPage.noImageRequest(page)
     const { classId, activeId, courseId, title } = activeItem
     let arr = activeId.split(',')
     if (arr[1] === '2') {

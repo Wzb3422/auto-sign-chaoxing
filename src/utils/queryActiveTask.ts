@@ -1,4 +1,5 @@
 import { Browser } from 'puppeteer'
+import ConfigPage from './ConfigPage'
 
 
 
@@ -6,6 +7,7 @@ export const queryActiveTask = async (browser: Browser, courseIDArray: CourseIDI
   const queryActive = async (courseIdItem: CourseIDItem): Promise<ActiveItem> => {
     const { classId, courseId, title } = courseIdItem
     const page = await browser.newPage()
+    ConfigPage.noImageRequest(page)
     await page.goto(`https://mobilelearn.chaoxing.com/widget/pcpick/stu/index?courseId=${courseId}&jclassId=${classId}`)
     // endlist for test startList
     const activeListHandle = await page.$('#startList')

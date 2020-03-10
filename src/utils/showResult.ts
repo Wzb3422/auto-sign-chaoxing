@@ -16,5 +16,5 @@ export const showResult = (resultArray: ResultItem[]) => {
     }
   })
   console.log('💰 签到结果')
-  console.log(`🚗 成功 ${count.success} 门，失败： ${count.fail} 门`)
+  return `🚗 成功 ${count.success} 门，失败： ${count.fail} 门`
 }
