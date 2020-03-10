@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "nodemon ./dist/app.js",
     "build": "tsc",
-    "start": "pm2 --name autoSign ./dist/app.js",
+    "start": "pm2 start ./dist/app.js --name autoSign",
     "restart": "pm2 stop autoSign"
   },
   "dependencies": {
