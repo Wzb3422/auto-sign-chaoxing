@@ -13,23 +13,39 @@ const rootController = async (ctx: Context) => {
   console.log('🐛 开始进行登录操作')
   const {username, password} = ctx.request.body
 
-  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
-  const page = await browser.newPage();
+  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] })
+  const page = await browser.newPage()
   // 不请求图片
   ConfigPage.noImageRequest(page)
 
   // 登录
   if (await login(page, username, password) === false) {
-    ctx.body = '登录失败'
+    ctx.body = {
+      status: 0,
+      message: '登录失败'
+    }
     console.log('⚠️ 登录失败')
     return
   }
+
   console.log('🚪 登录成功')
 
+  // 获取各种 ID
   console.log(`🔍 开始获取 classId courseId 等信息`)
-  const courseIDArray = await getCourseIds(page)
+  const courseIdResult = await getCourseIds(browser)
+  let courseIDArray: CourseIDItem[] = []
+  if (courseIdResult.status) {
+    ctx.body = {
+      status: 1,
+      message: `courseID 获取失败 Error: ${courseIdResult.message}`
+    }
+    return
+  } else {
+    courseIDArray = courseIdResult.data
+  }
   console.log(`😯 classId courseId 等信息 获取成功`)
   console.log(`🤔 你共有 ${courseIDArray.length} 门课程`)
+
   console.log(`🔍 正在查看活动中的任务`)
   const actvieSignArray = await queryActiveTask(browser, courseIDArray)
   console.log(`📖 活动中的任务查询结束`)
