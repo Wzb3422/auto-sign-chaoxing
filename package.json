@@ -11,7 +11,7 @@
     "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-router": "^7.4.0",
     "@types/puppeteer": "^2.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "jest": "^25.1.0",
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.2.1",
