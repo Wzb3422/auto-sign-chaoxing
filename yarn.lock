@@ -4732,9 +4732,9 @@ symbol-tree@^3.2.2:
   integrity sha1-QwY30ki6d+B4iDlR+5qg7tfGP6I=
 
 systeminformation@^4.14.16:
-  version "4.23.0"
-  resolved "https://registry.npm.taobao.org/systeminformation/download/systeminformation-4.23.0.tgz#9a38262d3f6c2db4b7b5abd4808a2035c8a162c2"
-  integrity sha1-mjgmLT9sLbS3tavUgIogNcihYsI=
+  version "4.34.19"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-4.34.19.tgz#c5f066cc043482686d95bbc554d52e6ec9e42367"
+  integrity sha512-ssUYQ0s1FFeb8EGtyCX/41cC/XaF84gbNAUfaUTziibx+xCAaR0zrOy0yZlnUrsWDQ+snp/Utl8cx8IdtrevrA==
 
 term-size@^1.2.0:
   version "1.2.0"
