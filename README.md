@@ -1,6 +1,6 @@
 # ✌️ 超星学习通自动签到
 
-👴 整个自动签到，在家安稳睡觉。
+整个自动签到，在家安稳睡觉。
 ## 技术栈
 
 本项目使用 TypeScript Koa Puppeteer 实现。
@@ -21,7 +21,7 @@ yarn install
 
 目前本项目采用 tsc -w + nodemon ./dist 进行调试。
 
-分别在两个 terminal 中执行（别骂啦别骂啦 我知道这么做很憨）
+分别在两个 terminal 中执行
 ```bash
 tsc -w
 yarn dev
